@@ -4,37 +4,26 @@
   "manifest_version": 2,
   "description": "Copy link with Alt/Ctrl/Shift-Click. No more right clicks then searching through a context menu.",
   "default_locale": "en",
-  
+
   "applications": {
     "gecko": {
       "id": "@copy-text-without-selecting"
     }
   },
-  
-  "permissions" : [
-    "http://*/*", 
-    "https://*/*", 
-    "storage", 
-    "clipboardWrite"
-  ],
-  
-  "icons" : {
-    "48" : "icon.png"
+
+  "permissions": ["http://*/*", "https://*/*", "storage", "clipboardWrite"],
+
+  "icons": {
+    "48": "icon.png"
   },
-  
+
   "content_scripts": [
-        {
-            "matches": [
-                "http://*/*", 
-                "https://*/*"
-            ],
-            "js": [
-                "jquery-3.3.1.min.js",
-                "menu.js"
-            ],
-            "run_at" : "document_start"
-        }
-    ],
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["jquery-3.3.1.min.js", "menu.js"],
+      "run_at": "document_start"
+    }
+  ],
   "options_ui": {
     "page": "options.html",
     "chrome_style": true
