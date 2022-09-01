@@ -38,29 +38,27 @@
             const href = closestAnchor.attr('href');
             debug && console.log('href', href);
 
-            if(href) {
+            if (href) {
                 copy(href.trim());
             }
 
-            if (debug) {
-                var rect = clickedElement.getBoundingClientRect();
-                var frame = document.createElement("div");
-                Object.assign(frame.style, {
-                    position: "absolute",
-                    top: (rect.top + window.scrollY) + "px",
-                    left: (rect.left + window.scrollX) + "px",
-                    width: (rect.width - 4) + "px",
-                    height: (rect.height - 4) + "px",
-                    border: "solid 2px gold",
-                    borderRadius: "5px",
-                    zIndex: "99999",
-                    pointerEvents: "none"
-                });
+            var rect = clickedElement.getBoundingClientRect();
+            var frame = document.createElement("div");
+            Object.assign(frame.style, {
+                position: "absolute",
+                top: (rect.top + window.scrollY) + "px",
+                left: (rect.left + window.scrollX) + "px",
+                width: (rect.width - 4) + "px",
+                height: (rect.height - 4) + "px",
+                border: "solid 2px gold",
+                borderRadius: "5px",
+                zIndex: "99999",
+                pointerEvents: "none"
+            });
 
-                document.body.appendChild(frame);
+            document.body.appendChild(frame);
 
-                $(frame).fadeIn(300, "swing").delay(500).fadeOut(500, "swing");
-            }
+            $(frame).fadeIn(300, "swing").delay(500).fadeOut(500, "swing");
         } else if (debug) {
             console.log(`closestAnchor && closestAnchor.length > 0`, false);
         }
