@@ -30,14 +30,17 @@
     };
 
     function copyCommand(clickedElement) {
-        const closestAnchor = $(clickedElement).closest('a')
+        const closestAnchor = $(clickedElement).closest('a');
         debug && console.log('clickedElement', clickedElement);
         debug && console.log('closestAnchor', closestAnchor);
 
-        if (closestAnchor) {
+        if (closestAnchor && closestAnchor.length > 0) {
             const href = closestAnchor.attr('href');
             debug && console.log('href', href);
-            copy(href.trim());
+
+            if(href) {
+                copy(href.trim());
+            }
 
             if (debug) {
                 var rect = clickedElement.getBoundingClientRect();
@@ -58,6 +61,8 @@
 
                 $(frame).fadeIn(300, "swing").delay(500).fadeOut(500, "swing");
             }
+        } else if (debug) {
+            console.log(`closestAnchor && closestAnchor.length > 0`, false);
         }
     }
 
