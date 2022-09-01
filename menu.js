@@ -1,11 +1,12 @@
 (function () {
     var metaKey;
+    var debug;
 
-    updateMetaKey();
+    updateSettings();
 
     chrome.storage.onChanged.addListener(function (changes, areaName) {
         if (areaName == "sync") {
-            updateMetaKey();
+            updateSettings();
         }
     })
 
@@ -18,40 +19,46 @@
         }
     }, false);
 
-    function updateMetaKey() {
+    function updateSettings() {
         chrome.storage.sync.get({
             metaKey: 'Alt',
+            debug: false,
         }, function (items) {
             metaKey = items.metaKey;
+            debug = items.debug;
         });
     };
 
     function copyCommand(clickedElement) {
-        var text = "";
-        console.log('clickedElement', clickedElement)
-        copy(text.trim());
-        // var text = getText(clickedElement.firstChild, "\r\n");
-        // copy(text.trim());
+        const closestAnchor = $(clickedElement).closest('a')
+        debug && console.log('clickedElement', clickedElement);
+        debug && console.log('closestAnchor', closestAnchor);
 
-        var rect = clickedElement.getBoundingClientRect();
-        var frame = document.createElement("div");
-        Object.assign(frame.style, {
-            position: "absolute",
-            top: (rect.top + window.scrollY) + "px",
-            left: (rect.left + window.scrollX) + "px",
-            width: (rect.width - 4) + "px",
-            height: (rect.height - 4) + "px",
-            border: "solid 2px gold",
-            borderRadius: "5px",
-            zIndex: "99999",
-            pointerEvents: "none"
-        });
+        if (closestAnchor) {
+            const href = closestAnchor.attr('href');
+            debug && console.log('href', href);
+            copy(href.trim());
 
-        document.body.appendChild(frame);
+            if (debug) {
+                var rect = clickedElement.getBoundingClientRect();
+                var frame = document.createElement("div");
+                Object.assign(frame.style, {
+                    position: "absolute",
+                    top: (rect.top + window.scrollY) + "px",
+                    left: (rect.left + window.scrollX) + "px",
+                    width: (rect.width - 4) + "px",
+                    height: (rect.height - 4) + "px",
+                    border: "solid 2px gold",
+                    borderRadius: "5px",
+                    zIndex: "99999",
+                    pointerEvents: "none"
+                });
 
-        $(frame).fadeIn(300, "swing").delay(500).fadeOut(500, "swing");
+                document.body.appendChild(frame);
 
-        // console.log(text.trim());
+                $(frame).fadeIn(300, "swing").delay(500).fadeOut(500, "swing");
+            }
+        }
     }
 
     function copy(text) {
