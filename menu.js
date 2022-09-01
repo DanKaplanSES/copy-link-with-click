@@ -27,8 +27,11 @@
     };
 
     function copyCommand(clickedElement) {
-        var text = getText(clickedElement.firstChild, "\r\n");
+        var text = "";
+        console.log('clickedElement', clickedElement)
         copy(text.trim());
+        // var text = getText(clickedElement.firstChild, "\r\n");
+        // copy(text.trim());
 
         var rect = clickedElement.getBoundingClientRect();
         var frame = document.createElement("div");
