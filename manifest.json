@@ -1,6 +1,6 @@
 {
   "name": "Copy link with Alt/Ctrl/Shift-Click",
-  "version": "2.0.2",
+  "version": "1.0.0",
   "manifest_version": 2,
   "description": "Copy link with Alt/Ctrl/Shift-Click. No more right clicks then searching through a context menu.",
   "default_locale": "en",
