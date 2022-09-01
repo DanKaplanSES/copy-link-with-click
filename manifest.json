@@ -7,7 +7,7 @@
 
   "applications": {
     "gecko": {
-      "id": "@copy-text-without-selecting"
+      "id": "@copy-link-with-click"
     }
   },
 
