@@ -13,7 +13,8 @@
     document.addEventListener("click", function (event) {
         if ((event.altKey && metaKey == "Alt")
             || (event.ctrlKey && metaKey == "Ctrl")
-            || (event.shiftKey && metaKey == "Shift")) {
+            || (event.shiftKey && metaKey == "Shift")
+            || (event.getModifierState && event.getModifierState('CapsLock') && metaKey == "CapsLock")) {
             copyCommand(event.target);
             event.preventDefault();
         }

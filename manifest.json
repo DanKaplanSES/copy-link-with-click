@@ -1,8 +1,8 @@
 {
   "name": "Copy Link With Click",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "manifest_version": 2,
-  "description": "Copy link with Alt/Ctrl/Shift-Click. No more right clicks then searching through a context menu.",
+  "description": "Copy link with Alt/Ctrl/Shift/CapsLock-Click. No more right clicks then searching through a context menu.",
   "default_locale": "en",
 
   "applications": {

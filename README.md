@@ -1,14 +1,14 @@
 # Copy Link With Click (Firefox addon)
 
-Copy a link to your clipboard with Alt/Ctrl/Shift-Click.
+Copy a link to your clipboard with Alt/Ctrl/Shift/CapsLock-Click.
 
-Defaults to using the Alt key, but you can change it to Control or Shift.
+Defaults to using the Alt key, but you can change it to Control or Shift or CapsLock.
 
 ## Description
 
-If you  install this addon, Alt (by default) Clicking on a link will copy its href attribute. It'll use the closest anchor it can find ([closest in the jQuery sense](https://api.jquery.com/closest/#closest-selector)).
+If you install this addon, Alt (by default) Clicking on a link will copy its href attribute. It'll use the closest anchor it can find ([closest in the jQuery sense](https://api.jquery.com/closest/#closest-selector)).
 
-Originally forked from this repository: https://github.com/YujiSoftware/copy-text-without-selecting
+Originally forked from: https://github.com/YujiSoftware/copy-text-without-selecting
 
 ( Icon designed by: [Mouse Runner.com](http://www.mouserunner.com/ "Mouse Runner.com, Good Content, Free Resources") )
 
