@@ -1,5 +1,5 @@
 {
-  "name": "Copy link with Alt/Ctrl/Shift-Click",
+  "name": "Copy Link With Click",
   "version": "1.0.0",
   "manifest_version": 2,
   "description": "Copy link with Alt/Ctrl/Shift-Click. No more right clicks then searching through a context menu.",
