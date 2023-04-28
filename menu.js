@@ -36,7 +36,7 @@
         debug && console.log('closestAnchor', closestAnchor);
 
         if (closestAnchor && closestAnchor.length > 0) {
-            const href = closestAnchor.attr('href');
+            const href = closestAnchor.prop('href');
             debug && console.log('href', href);
 
             if (href) {
