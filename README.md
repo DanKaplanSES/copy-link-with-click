@@ -12,6 +12,10 @@ Originally forked from: https://github.com/YujiSoftware/copy-text-without-select
 
 ( Icon designed by: [Mouse Runner.com](http://www.mouserunner.com/ "Mouse Runner.com, Good Content, Free Resources") )
 
+## Installation
+
+Visit https://addons.mozilla.org/en-US/firefox/addon/copy-link-with-click/
+
 ## License
 
 The MIT License (MIT)
