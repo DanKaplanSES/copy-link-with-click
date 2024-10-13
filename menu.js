@@ -47,10 +47,10 @@
             var frame = document.createElement("div");
             Object.assign(frame.style, {
                 position: "absolute",
-                top: (rect.top + window.scrollY) + "px",
-                left: (rect.left + window.scrollX) + "px",
-                width: (rect.width - 4) + "px",
-                height: (rect.height - 4) + "px",
+                top: (rect.top + window.scrollY - 4) + "px",
+                left: (rect.left + window.scrollX - 4) + "px",
+                width: (rect.width + 8) + "px",
+                height: (rect.height + 8) + "px",
                 border: "solid 2px gold",
                 borderRadius: "5px",
                 zIndex: "99999",
